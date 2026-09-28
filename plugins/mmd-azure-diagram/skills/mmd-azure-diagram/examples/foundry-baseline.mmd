@@ -1,0 +1,59 @@
+flowchart LR
+  user[Users<br>chat UI]
+
+  subgraph sub[Azure subscription / workload RG]
+    subgraph vnet[VNet 192.168.0.0/16]
+      subgraph snetagw[snet-appGateway]
+        agw[Application Gateway<br>WAF_v2]
+      end
+      subgraph snetpe[snet-privateEndpoints]
+        pe[Private Endpoints]
+      end
+      subgraph snetagent[snet-agentsEgress]
+        proxy[Agent data proxy]
+      end
+      subgraph snetfw[AzureFirewallSubnet]
+        fw[Azure Firewall]
+      end
+      subgraph snetops[Bastion / Jump box]
+        bastion[Bastion]
+        jump[Jump box VM]
+      end
+    end
+    subgraph paas[PaaS - private endpoints only]
+      app[App Service<br>P1v3 x3]
+      kv[Key Vault]
+      subgraph foundry[Microsoft Foundry]
+        agent[Foundry Agent Service<br>prompt agent]
+        model[Foundry Models<br>gpt-5.4]
+      end
+      subgraph state[Agent state]
+        cosmos[(Cosmos DB)]
+        search[AI Search]
+        blob[Storage account]
+      end
+      subgraph obs[Observability]
+        law[Log Analytics]
+        appi[Application Insights]
+      end
+    end
+  end
+  internet[Public MCP / OpenAPI tools]
+  %% azure: internet=none
+  %% azure: proxy=network-interfaces
+
+  user -->|"① https"| agw
+  agw -->|"① via PE"| app
+  app -->|"② Responses API"| agent
+  agent -->|"⑥ inference"| model
+  agent -->|"③ tools"| proxy
+  proxy -->|"④ ⑦ via PE"| pe
+  pe --> cosmos
+  pe --> search
+  pe --> blob
+  proxy -->|"⑤ UDR"| fw
+  fw -->|"⑤ allowed FQDN"| internet
+  bastion -->|RDP| jump
+  jump -.->|portal| agent
+  agw -.-> kv
+  app -.-> appi --> law

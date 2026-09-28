@@ -1,0 +1,26 @@
+{
+  "name": "mizuryu",
+  "owner": {
+    "name": "MizuRyu",
+    "url": "https://github.com/MizuRyu"
+  },
+  "metadata": {
+    "description": "MizuRyu が公開する Claude Code のプラグインと Agent Skills の配布元。"
+  },
+  "plugins": [
+    {
+      "name": "mmd-azure-diagram",
+      "source": "./plugins/mmd-azure-diagram",
+      "description": "Mermaid の flowchart を Azure 公式アイコンの構成図にする。矢印がアイコンを突き抜けない PNG/SVG・draw.io・PowerPoint を出力する。",
+      "category": "diagram",
+      "keywords": [
+        "azure",
+        "mermaid",
+        "architecture",
+        "diagram",
+        "drawio",
+        "powerpoint"
+      ]
+    }
+  ]
+}

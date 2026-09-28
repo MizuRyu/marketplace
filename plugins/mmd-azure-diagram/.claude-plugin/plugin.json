@@ -1,0 +1,19 @@
+{
+  "name": "mmd-azure-diagram",
+  "version": "0.1.0",
+  "description": "Mermaid の flowchart を Azure 公式アイコンの構成図にする。矢印がアイコンを突き抜けない PNG/SVG・draw.io・PowerPoint を出力する。",
+  "author": {
+    "name": "MizuRyu",
+    "url": "https://github.com/MizuRyu"
+  },
+  "homepage": "https://github.com/MizuRyu/marketplace/tree/main/plugins/mmd-azure-diagram",
+  "repository": "https://github.com/MizuRyu/marketplace",
+  "keywords": [
+    "azure",
+    "mermaid",
+    "architecture",
+    "diagram",
+    "drawio",
+    "powerpoint"
+  ]
+}
