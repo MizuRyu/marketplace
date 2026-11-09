@@ -17,11 +17,12 @@ Mermaid で書いた構成図を、Azure 公式アイコンの構成図にする
 
 ## 必要なもの
 
-- Python 3.10 以上、[uv](https://docs.astral.sh/uv/)
-- Node.js と `pnpm` (または `bun` / `npx`) — [mermaid-cli](https://github.com/mermaid-js/mermaid-cli) を動かす
-- [draw.io Desktop](https://www.drawio.com/) — PNG/SVG・draw.io の出力と検査に使う
-- Azure Architecture Icons — このリポジトリには含めない。Microsoft の[利用条件](https://learn.microsoft.com/azure/architecture/icons/)
-  (構成図・研修資料・ドキュメントでの利用に限る) に同意したうえで、各自で取得する (使い方 1)。
+| 必要なもの | 用途 |
+| --- | --- |
+| Python 3.10 以上、[uv](https://docs.astral.sh/uv/) | スクリプトの実行 |
+| Node.js と `pnpm` (または `bun` / `npx`) | [mermaid-cli](https://github.com/mermaid-js/mermaid-cli) を動かす |
+| [draw.io Desktop](https://www.drawio.com/) | PNG/SVG・draw.io の出力と検査 |
+| Azure Architecture Icons | 構成図のアイコン。このリポジトリには含めない。Microsoft の[利用条件](https://learn.microsoft.com/azure/architecture/icons/) (構成図・研修資料・ドキュメントでの利用に限る) に同意したうえで、各自で取得する (使い方 1) |
 
 ## 使い方
 

@@ -18,6 +18,10 @@ Claude Code のプラグインと [Agent Skills](https://agentskills.io)。
 | --- | --- |
 | [mmd-azure-diagram](plugins/mmd-azure-diagram) | Mermaid の構成図を、Azure 公式アイコンの構成図 (PNG/SVG・draw.io・PowerPoint) にする |
 
+[![mmd-azure-diagram で Mermaid から作った Microsoft Foundry のベースライン構成図](plugins/mmd-azure-diagram/skills/mmd-azure-diagram/examples/foundry-baseline.final.png)](plugins/mmd-azure-diagram)
+
+<sub>mmd-azure-diagram の出力例。[foundry-baseline.mmd](plugins/mmd-azure-diagram/skills/mmd-azure-diagram/examples/foundry-baseline.mmd) から生成。</sub>
+
 ## 追加する
 
 1. `plugins/<plugin>/` に `.claude-plugin/plugin.json`・`README.md`・中身 (スキル・サブエージェント・
